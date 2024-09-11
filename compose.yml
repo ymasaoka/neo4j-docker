@@ -13,4 +13,4 @@ services:
     # env_file:
     #   - db-variables.env
     environment:
-      -  NEO4J_AUTH=NONE
+      -  NEO4J_AUTH=none
