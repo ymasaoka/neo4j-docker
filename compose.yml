@@ -1,0 +1,16 @@
+services:
+  db:
+    image: neo4j:community # https://hub.docker.com/_/neo4j/
+    tty: true
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - ./neo4j/data:/data
+      - ./neo4j/logs:/logs
+      - ./neo4j/conf:/conf
+      - ./certs/bolt:/var/lib/neo4j/certificates/bolt
+    # env_file:
+    #   - db-variables.env
+    environment:
+      -  NEO4J_AUTH=NONE
